@@ -20,6 +20,14 @@ pnpm build
 pnpm serve
 ```
 
+## Testing
+Run unit tests with Vitest:
+```sh
+pnpm test          # run once
+pnpm test:watch    # watch mode
+pnpm test:coverage # with coverage
+```
+
 ## Notes
 - Source files live in `src/` and compile to `dist/`.
 - tsconfig targets Node, CommonJS modules.
