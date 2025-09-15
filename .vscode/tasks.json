@@ -1,0 +1,33 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run arrays.ts generically",
+			"type": "shell",
+			"command": "pnpm",
+			"args": [
+				"ts",
+				"src/arrays.ts"
+			],
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Run objects.ts generically",
+			"type": "shell",
+			"command": "pnpm",
+			"args": [
+				"ts",
+				"src/objects.ts"
+			],
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			],
+			"group": "build"
+		}
+	]
+}

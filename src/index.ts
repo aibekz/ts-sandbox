@@ -1,8 +1,9 @@
 import { greet, add } from "./functions";
 // Basic variables with types
-const username: string = "Alex";
-const age: number = 25;
+const fullname: string = "John Doe";
+const age: number = 100;
 const isDev: boolean = true;
 
-console.log(greet(username, age));
+console.log(greet(fullname, age));
+
 console.log(add(5, 10));

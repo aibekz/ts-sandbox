@@ -20,6 +20,16 @@ pnpm build
 pnpm serve
 ```
 
+### Run any TypeScript file (DRY)
+```sh
+# one-off run
+pnpm dev src/arrays.ts
+pnpm dev src/objects.ts
+
+# watch a file
+pnpm watch src/arrays.ts
+```
+
 ## Testing
 Run unit tests with Vitest:
 ```sh
