@@ -1,4 +1,6 @@
-// API can return numeric or string ID
+// --- Union Types ---
+// Accept either number or string as an ID.
+// Useful when an API may return numeric DB ids or string UUIDs.
 function getUser(id: number | string): void {
   console.log("Fetching user with id:", id);
 }
@@ -6,11 +8,9 @@ function getUser(id: number | string): void {
 getUser(101);
 getUser("abc-123");
 
-
-// Type Narrowing
-
-// Use checks to “narrow” the union:
-
+// --- Type Narrowing ---
+// Check the runtime type before using type-specific methods.
+// Prevents errors like calling .toUpperCase() on a number.
 function formatId(id: number | string): string {
   if (typeof id === "string") {
     return id.toUpperCase();
@@ -21,10 +21,8 @@ function formatId(id: number | string): string {
 console.log(formatId(42));       // "42.00"
 console.log(formatId("user01")); // "USER01"
 
-
-// Type Literals
-
-// Function that only accepts certain status values
+// --- Literal Types (Constrained Values) ---
+// Only allow specific string values for status.
 type Status = "success" | "error" | "loading";
 
 function handleStatus(status: Status): void {
@@ -35,30 +33,29 @@ function handleStatus(status: Status): void {
 
 handleStatus("success");
 handleStatus("loading");
-// handleStatus("pending"); // ❌ Error: not allowed
+// handleStatus("pending"); // ❌ Compile-time error (not in Status)
 
-
-// COMBINE Union + Literal Types
-
-// Payment method can only be certain strings
+// --- Combine Union + Literal Types ---
+// Constrain valid choices while still passing other typed params.
 type PaymentMethod = "card" | "cash" | "paypal";
 
-// Payment amount must be a number
 function pay(method: PaymentMethod, amount: number): void {
   console.log(`Paid $${amount} via ${method}`);
 }
 
 pay("card", 50);
 pay("paypal", 20);
-// pay("mastercard", 100); // ❌ Error: not allowed
+// pay("bitcoin", 100); // ❌ Compile-time error (not in PaymentMethod)
 
-
-type Role = "admin" | "editor" | "viewer"
+// --- Challenge: Role + Guard ---
+// Constrain role to known values and implement simple permission logic.
+type Role = "admin" | "editor" | "viewer";
 
 function canEdit(role: Role): boolean {
-   return role === "admin" || role === "editor";
+  return role === "admin" || role === "editor";
 }
 
 console.log(canEdit("admin"));  // true
 console.log(canEdit("editor")); // true
 console.log(canEdit("viewer")); // false
+// console.log(canEdit("guest")); // ❌ Compile-time error (not in Role)
