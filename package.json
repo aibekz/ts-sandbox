@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "tsx",
+  "dev": "tsc --noEmit && tsx",
     "watch": "tsx watch",
     "build": "tsc",
   "serve": "node dist/index.js",
