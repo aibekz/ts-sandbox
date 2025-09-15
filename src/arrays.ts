@@ -1,3 +1,4 @@
+export {};
 // Shopping cart item IDs
 const cartIds: number[] = [101, 102, 103];
 

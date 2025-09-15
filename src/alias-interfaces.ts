@@ -1,3 +1,4 @@
+export {};
 // --- Type Alias Example ---
 // A type alias gives a reusable name to a shape (here: Book).
 // We use it to make the code cleaner and avoid repeating the same structure.

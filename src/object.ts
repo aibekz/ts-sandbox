@@ -1,3 +1,4 @@
+export {};
 // Typed user object
 const user: { id: number; name: string; email: string } = {
   id: 1,

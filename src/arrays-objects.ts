@@ -1,3 +1,4 @@
+export {};
 // --- Arrays ---
 // Typed arrays ensure all elements share the same type.
 // Useful for collections like IDs, names, etc.

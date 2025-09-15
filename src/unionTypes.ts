@@ -1,6 +1,7 @@
 // --- Union Types ---
 // Accept either number or string as an ID.
 // Useful when an API may return numeric DB ids or string UUIDs.
+export {};
 function getUser(id: number | string): void {
   console.log("Fetching user with id:", id);
 }
